@@ -1,0 +1,14 @@
+1. The operators in javascript and typescript are same.
+
+2. for..of loop: (Typescript)
+
+let arr = [1, 2, 3, 4, 5];  
+  
+for (var val of arr) {  
+  console.log(val);  
+}  
+
+3. Version control systems are a category of software tools that help a software team 
+manage changes to source code over time. Version control software keeps track of every
+modification to the code in a special kind of database.
+https://www.atlassian.com/git/tutorials/what-is-version-control
