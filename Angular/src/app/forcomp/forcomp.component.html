@@ -1,0 +1,9 @@
+
+
+<input type="text" value="" [(ngModel)]='place'>
+<button (click)="addperson(place)">Add to list</button>
+<ul *ngFor="let p of places;index as i" >
+    <li>
+       {{i+1}}. {{p}}
+    </li>
+</ul>

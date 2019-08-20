@@ -1,0 +1,17 @@
+{
+  "Users": [
+    {
+      "Username": "Anu",
+      "Email": "Anu@gmail.com",
+	"Password":"mnbvc",
+	"RepeatPassword":"mnbvc"
+    },
+    {
+      "Username": "K",
+      "Email": "K@gmail.com",
+	"Password":"mnbvc1",
+	"RepeatPassword":"mnbvc1"
+    }
+  ]
+}
+

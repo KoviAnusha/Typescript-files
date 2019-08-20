@@ -1,0 +1,23 @@
+<!--<button (click)="show=!show">show</button>
+show={{show}}>
+
+<button (click)="Toggleshow()">{{show?'show':'hide'}}</button>
+show={{show}}
+<br>
+<br>
+<div *ngIf="show ; else elseTemplate">Text to show
+    <img src='../../assets/flower.jpg'>
+</div>
+<ng-template #elseTemplate>
+    Please friend login.
+    <img src='../../assets/santa.jpg'>
+</ng-template>-->
+<input type="text" [(ngModel)]='person'>
+<ul [ngSwitch]="person">
+    <li *ngSwitchCase="'Mohan'">hello {{person}}</li>
+    <li *ngSwitchCase="100">hello {{person}}</li>
+    <li *ngSwitchCase="'Vijay'">hello {{person}}</li>
+    <li  *ngSwitchCase="''"></li>
+    <li *ngSwitchDefault>Name Not in list<button (click)='AddToList'>Add to List</button> {{person}}
+    </li>
+</ul>
