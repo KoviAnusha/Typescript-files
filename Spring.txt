@@ -1,0 +1,40 @@
+why polymorphism? why do we need it and y is it important? why do we need same name for function? what is the significance for polymorphic behavior?
+what's the issue with new ? how to sort it?
+
+--------------------------------------
+->through inheritance we are achieving ploymorphism.
+->selective ignorance or abstraction
+
+->emp e1=new manager()
+e1.cal_salary() //dynamic polymorphism
+here, 
+dynamic type of e1 is manager.
+static type of e1 is emp.
+every reference variable  has 2 types
+compile time = static
+run time = dynamic
+->either get the reuseability or get dynamic polymorphism.
+-> when there "is a relationship" we go for abstract classes.
+-> when there is same behaviour (common functionality) for different classes,  we go for interfaces.
+
+-> Interfacename i1=new classname();
+-> Printable p[] = new Printable[4];//create an array of objects //Printable is an interface
+
+interfaces advantage:
+clubbing together non reference classes & achieve dynamic polymorphism
+loose coupling (cal c=new calA(),cal c1=new calB(),...)
+programming by contact
+-------------------------------------------------
+Top level class in exception handling id Throwable.
+
+Throwable----------------------------->Exception (handle and come out of the situation)
+		|---------------------->Error
+
+Exception and error are two sub classes.
+
+checked (all except that) and unchecked (error and run time) exception differences
+
+--------------------------------------
+create a class emp
+create a class date
+create users -> array of printables
