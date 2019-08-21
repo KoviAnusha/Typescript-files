@@ -1,0 +1,40 @@
+1.  create procedure dat(in s1 date,in s2 date)
+    -> begin
+    -> while(s1<s2) do
+    -> set s1=adddate(s1,interval 1 day);
+    -> insert into cal1 values(year(s1),month(s1),day(s1));
+    -> end while;
+    -> end/
+
+call dat('2003-12-31','2004-2-29');
+
+2. create function max_exp1 () returns int return (select (200000+sal + comm) as 'bonus salary' from emp where timestampdiff(year,hiredate,curdate())=(select 
+max(timestampdiff(year,hiredate,curdate())) from emp));
+
+
+1. select ename,(sal + coalesce(((sal * comm) / 100), 0)) as 'net annual salary' from emp;
+2. select empno,ename,comm from emp where comm is not NULL;
+3. select * from emp where (job='clerk' or job='salesman' or job='analyst') and sal>3000;
+4.select ename from emp where timestampdiff(year,hiredate,curdate())>=5;
+5. select curdate(),timestampdiff(month,hiredate,curdate()) as 'experience' from emp where job='manager';
+6.select e.ename,d.deptno,d.loc,e.hiredate from emp e right join dept d on e.deptno=d.deptno where (d.loc='new york' or d.loc='chicago') and hiredate<('1982-12-31');
+7.  select * from emp order by sal desc limit 5;
+8.select * from emp where sal=(select (max(sal)+min(sal))/2 from emp);
+9. select ename from emp where job='manager' and sal>(select avg(sal) from emp);
+10.select e.empno from emp e,emp e1 where e.mgr=e1.empno and e.sal<e1.sal and e.sal> any (select sal from emp where empno in (select mgr from emp));
+11.delete from dept where deptno=(select d.deptno from emp e right join dept d on e.deptno=d.deptno where e.ename<=>NULL); //doubt
+12.select ename,SUBSTR(hiredate,1,2)-substr(sal,-2,2) from emp;
+13. select ename,sal , (Case when sal<1500 then 'Less Salary' when sal=1500 then 'Exact Salary' when sal>1500 then 'More Salary' else 'No Salary' end) from emp;
+14.select ename,(1.15*sal)/64 as 'salary in dollars' from emp;
+15. ALTER TABLE emp ADD CONSTRAINT chk_001 CHECK(sal<=10000);
+16.update emp set bonus=500 where ename in (select ename from emp where sal<(select avg(sal) from emp) group by deptno,ename); 
+17.select concat(upper(substr(ename,1,(length(ename)/2)-1)),lower(substr(ename,length(ename)/2,length(ename)))) from emp;
+18.SELECT * FROM emp ORDER BY sal desc limit 2,1;
+19.
+select case
+	when ascii(substr('99/98',1,1)) between 48 and 57 and ascii(substr('99/98',2,1)) between 48 and 57
+	and substr('99/98',3,1)='Y' and ascii(substr('99/98',4,1)) between 48 and 57 and ascii(substr('99/98',5,1)) between 48 and 57
+	then 'Yes'
+	else 'No'
+	end;
+20.select empno,hiredate,(case when dayofmonth(hiredate)<=15 then 'last fri of this month' else 'last fri  of next mon' end) as paydate from emp;

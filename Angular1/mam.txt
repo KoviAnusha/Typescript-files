@@ -1,0 +1,11 @@
+httpObj.get<T>(url,options).subscribe(
+data => {},
+error => {}
+)
+
+httpObj.get<t>(url, options).toPromise()
+			    .then(
+				dat => {},
+				error => {}
+				)
+			     .catch(){}

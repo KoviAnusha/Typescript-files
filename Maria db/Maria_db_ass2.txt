@@ -1,0 +1,47 @@
+1. select ename from emp where ename like 'A%';
+2. select ename from emp where mgr<=>NULL;
+3. select ename,empno,sal from emp where sal between 1200 and 1400;
+4. select ename,sal,(1.1*sal) as '10% rise in sal' from emp where deptno=(select deptno from dept where dname='research');
+5. create view oldtimers as select hiredate from emp where year(hiredate)<1992;
+6. select ename,job from emp where job='clerk';
+7. select job,avg(sal),count(*) as no_of_employees from emp group by job;
+8. select ename,timestampdiff(year,hiredate,curdate()) as number_of_years_with_the_company,day(hiredate) as hired_on from emp;
+9. select (sal*12) as yearly_sal from emp where job='manager';
+10. (select ename,sal from emp where sal=(select max(sal) from emp)) union  (select ename,sal from emp where sal=(select min(sal) from emp));
+11.select d.deptno from emp e right join dept d on e.deptno=d.deptno group by e.deptno having e.deptno<=>null;
+12.select ename,sal from emp where job='analyst' and sal>1200 and deptno=20 order by ename;
+13.select d.dname as dept_name,d.deptno as dept_number,sum(e.sal) as total_sal from emp e right join dept d on e.deptno=d.deptno group by d.dname,d.deptno;
+14. select e3.ename as 'manager1 name',e2.ename as 'manager2 name',e1.ename as 'employee name' from emp e1,emp e2,emp e3 where e1.mgr=e2.empno and e2.mgr=e3.empno order by e3.ename;
+set 1:
+
+1. select ename from emp where job='manager';
+2. select ename,sal from emp where ename='miller' or ename='smith';
+3. select ename,sal from emp where sal>1000;
+4. select ename,sal from emp where ename !='james' ;
+5. select * from emp where ename like 'S%';
+6. select ename from emp where ename like '%A%';
+7. select ename from emp where ename like '__L%';
+8. select ename from emp where ename like 'A%' or ename like 'M%';
+9. select sal*12 as 'yearly sal' from emp where ename='smith'; 
+10. select sal/30 as 'daily sal' from emp where ename='jones';
+11. select sum(sal) as 'total sal of employees' from emp ;
+12. select avg(sal*12) as 'average annual sal' from emp;
+13. select ename,job,sal,deptno from emp where deptno=30 and job!='salesman';
+14. select distinct d.dname from emp e join dept d on d.deptno=e.deptno;
+15. select ename as employee,sal as 'monthly salary' from emp where sal>1500 and (deptno=10 or deptno=30);
+16. select ename as employee,sal as 'monthly salary' from emp where sal not in (1500,2850);
+17. select ename,job from emp where mgr<=>null;
+18.  select ename as employee,sal as 'monthly salary',job from emp where sal not in (1000,3000,5000) and (job='manager' or job='analyst');
+19. select ename,sal,comm from emp where comm>(1.1*sal);
+20. select ename from emp where ename like '%L%L%' and deptno=30 and mgr=7782;
+21.select ename from emp where timestampdiff(year,hiredate,curdate())>10 and timestampdiff(year,hiredate,curdate())<20;
+22.select d.dname,e.ename from emp e join dept d on d.deptno=e.deptno order by d.dname,e.ename desc;
+23. select ename,timestampdiff(year,hiredate,curdate()) as experience from emp where ename='miller';
+24.select distinct deptno from emp e;
+25.select d.dname,e.ename from emp e join dept d on d.deptno=e.deptno where d.dname='sales' or d.dname='research';
+26.select d.dname, avg(e.sal) as 'average salary' from emp e join dept d on e.deptno=d.deptno group by d.dname;
+27.(select ename,sal from emp where sal=(select max(sal) from emp)) union  (select ename,sal from emp where sal=(select min(sal) from emp));
+28.(select deptno,min(sal) from emp group by deptno) union (select deptno,max(sal) from emp group by deptno) ;
+29. select * from emp where sal<1000 and job='clerk';
+
+select e2.ename as 'manager name',e1.ename as 'employee name',e1.job as designation from emp e1,emp e2 where e1.mgr=e2.empno order by e2.ename;

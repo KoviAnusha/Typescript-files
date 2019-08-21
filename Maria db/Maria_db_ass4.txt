@@ -1,0 +1,100 @@
+1. select d.deptno,d.dname,sum(e.sal) as 'total salary' from emp e join dept d on e.deptno=d.deptno group by d.deptno,d.dname;
+2.
+
+
+
+2. Create procedure to check the bank customer table if transaction failed , reverse the old balance to his account . Write trigger to collect the failed transaction.
+
+
+ Data cleansing  process - Preprocess the dataset -cleanse and scrub while loading the data
+
+ 
+---- Replace NA with Null
+
+-- Remove $ symbol from salary
+
+-- remove leading and trailing space on name
+
+ 
+
+empno ename  sal
+
+ 
+
+"111"     NA          "$6000"
+
+"222"     "$7000"
+
+"333"     " bbb  " "$4000"
+
+"144"     "ddd    "                "$5000"
+
+ 
+
+3. Create table College Details with below column and insert 10 records
+
+
+College Key  -- Primary key
+
+College Code
+
+College Name
+
+Address
+
+University
+ 
+
+Create table department with below column and insert 10 records.
+
+Dept Key  - Primary key
+
+College key -Reference key of college detail . College key
+
+Department
+
+Total_seats_available
+
+
+Create table Candidates with below columns and insert 10 records
+
+Student key   -- Primary key
+
+StudentName
+
+FatherName
+
+DOB
+
+permanent address
+
+SchooldName
+
+Scored_mark
+
+Passed out year
+
+
+Create Table Counselling Transation and insert 20 records
+
+ 
+Couns Key -Primary key
+
+Counselling Date
+
+Student Key - reference key  of Candidate Table . Student key
+
+College Key - reference key of college detail table . college key.
+
+Department Key - reference key of department table dept key
+
+ 
+1)  Whenever Students lock the college with Specific Department , Update the column  Total_seats_available=Total_seats_available - 1 by using trigger
+
+2) If the seats count are 0 , then raise application error with below message
+
+  "No seats available".
+
+3) Write the procedure with in parameter with counselling Date column. procedure should print student list those who attendent the counselling on particular Date
+
+    with below columns.

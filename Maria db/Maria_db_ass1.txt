@@ -1,0 +1,28 @@
+1. select account_name from account where balance < 500;
+2. select customer_name from customer where customer_city='Brooklyn';
+3. select * from employee where salary>1400 and branch_name!='Downtown';
+4. select avg(salary) as 'avg salary' from employee;
+5. select account_number,count(*) as 'number of customers' from depositor group by account_number;
+6. select account_number, branch.branch_name, branch_city from account, branch where account.branch_name=branch.branch_name;
+
+1. select customer_name from customer;
+2. select distinct (b.branch_name) from branch b, loan l where l.branch_name=b.branch_name;
+3. select * from branch;
+4. select * from account where balance>700;
+5. select account_number,balance from account where balance > 800 and branch_name='Brighton';
+6. select branch_name, (assets/1000) as 'assets in thousands' from branch;
+7. select branch_name from branch where assets<4000000 and assets >1000000;
+8. select customer_name,a.account_number,a.branch_name from account a,depositor d where a.account_number=d.account_number;
+9. select customer_name,a.account_number,a.branch_name from account a,depositor d where a.account_number=d.account_number and a.balance<=400;
+
+
+1. c
+2. a
+3. b
+4. c
+5. a
+6. e
+7. b
+8. a
+9. d
+10. c

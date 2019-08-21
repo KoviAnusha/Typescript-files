@@ -1,0 +1,76 @@
+Git Bash
+
+#Create a repository
+> git init                           #Set your user email for this repository for commits
+>git config --global user.email "you@mail.com"               #Clone a repository
+> git clone <repo>                    #Create files in git
+> touch filename1.ext, filename2.ext                #Add files to git repo, from untracked to staging
+>git add filename.txt                    #Update files in git repo
+>git add -u filename.txt                           #View all files
+>ls
+OR
+>dir                         #View git log
+>git log                        #View git repo status
+> git status                      #Git commit with message
+>git commit -m "Your msg"
+#Git commit using vim
+>git commit
+Opens vim editor
+Type the msg after pressing i, then press esc
+Then exit by typing the following
+>:wq
+#View files in a particular commit version
+>git log -p -- <filename>
+#Work with a particular version
+>git checkout <commit version>
+#Check the differences in the version of files
+>git diff HEAD~1..HEAD
+#To manage all add, update, delete, rename to the staging area use the following command
+>git add A
+#If you are in staging, and want to undo a certain edit to the previous commit
+>git checkout filename.ext
+#To view the contents of a file in git
+>cat filename.txt
+#If you did a bunch of operations in git, but need to undo it, assuming the commit was done, then
+>git reset --hard
+ELSE
+>git reset --soft
+#To clean up your working environment
+#To know what will be cleaned / removed
+>git clean -n
+#To actually remove
+>git clean -f
+#To ignore files in a repository like bin/ debug / logs add a git ignore file
+>vim .gitignore
+#Add the filenames like
+/logs/*.log
+logs/
+#Check using git status, then commit the gitignore file
+#git log one line
+>git log --oneline
+#Clone a repository
+>git clone <repo url>
+#Get total commits made to the repository
+>git log --oneline | wc -l
+#View the last commit
+>git show HEAD
+#For a repo like jquery to see the fetch and push origins
+>git remote -v
+#View remote branches for jquery
+>git branch -r
+#View local branches
+>git branch
+#Move one directory up
+>git cd ../
+#To add a custom remote origin
+>git remote add yourorigin https://github.com/YourName/Foldername
+#To fetch from a remote repository
+>git fetch
+#To create a branch
+>git branch <branch_name>
+#To merge a branch into another
+>git merge <branch1> <branch2>
+#To switch the branches
+>git checkout branchname
+#To visualize all the branches
+>git log --graph --oneline --all --decorate
