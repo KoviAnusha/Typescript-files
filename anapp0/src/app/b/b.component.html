@@ -1,0 +1,9 @@
+<h1>Data from Component B</h1><br>
+
+Value of Property: {{valueForProp}}
+<br>
+Value after customEvent fired : {{resultOfEvent}}
+<hr>
+<h1>Data from Component A</h1><br>
+<app-a [propA]="valueForProp" (customEvent)="customEventHandler()"></app-a>
+<!-- [value]="valueForProp"  instead of using [] on html attributes... this is customing-->

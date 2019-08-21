@@ -1,0 +1,43 @@
+ <!--* is for structural directive-->
+<div *ngIf="Fa==true ; else else1">
+        <h5>{{Registerstatus}}</h5>
+<img src='../../assets/done.jpg'>    
+</div>
+<ng-template #else1>
+        <h5>{{Registerstatus}}</h5>
+    <img src='../../assets/fail.jpg'>
+</ng-template>
+
+ <h1>Registration</h1>
+<p>Please fill in this form to create an account in flipkart.</p>
+<br>
+<form ngNativeValidate>
+        <span>Username: </span> <input type="Username" [(ngModel)]="Username" 
+        placeholder="Enter Username" name="name" required>
+
+    <span>Email: </span> <input type="text" [(ngModel)]="Email" 
+    placeholder="Enter Email" [ngStyle]="Style1"
+     name="email" required>
+     <!--<span>Email: </span> <input type="text" [(ngModel)]="Email" 
+     placeholder="Enter Email" [style.background]="Propstyle"
+      name="email" required>-->
+<br>
+<br>
+<span>Phone number:</span><input type="number" [value]="Phone"
+ placeholder="Enter Phone number" name="ph number" required>
+ <br>
+ <br>
+<span>Password: </span> <input type="password" [(ngModel)]="Password" 
+placeholder="Enter Password" name="psw" required>
+<br>
+<br>
+<span>Repeat Password: </span> <input type="password" [(ngModel)]="RPassword" 
+placeholder="Repeat Password" name="psw-repeat" required>
+<br>
+<br>   
+<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+<button onclick="alert('Registration in progress')" 
+(click)="Login(Username,Email,Password,RPassword)">
+Register</button>
+</form>
+

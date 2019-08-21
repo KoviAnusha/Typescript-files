@@ -1,0 +1,29 @@
+ <!--* is for structural directive-->
+ <div class="container">
+ <body>
+ <div *ngIf="Fa==true ; else else1">
+    <h5>{{Loginstatus}}</h5>
+<img src='../../assets/done.jpg'  style="float: right;width: 100px;height: 100px;" >    
+</div>
+<ng-template #else1>
+    <h5>{{Loginstatus}}</h5>
+<img src='../../assets/fail.jpg'  style="float: right;width: 100px;height: 100px;" >
+</ng-template>
+<h1>Login</h1>
+<p>Please login to the account our website to have amazing offers.....</p><br>
+
+<form ngNativeValidate>
+<span>Username: </span> <input type="username" [(ngModel)]="Username" 
+placeholder="Enter Username" name="name" required>
+<br><br>
+<span>Password: </span> <input type="password" [(ngModel)]="Password" 
+placeholder="Enter Password" name="psw" required>
+<br><br>
+<button onclick="alert('Login in progress..........')" 
+(click)="Login(Username,Password)">
+Login</button>
+</form>
+<!-- <img src="../../assets/Background.jpg" width="50%">
+<img src="../../assets/done.jpg" width="50%"> -->
+</body>
+</div>

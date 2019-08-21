@@ -1,0 +1,14 @@
+<button class="btn btn-success" (click)="MessengerSvc.GetInsta()">Get Insta</button>
+
+<button class="btn btn-primary" (click)="MessengerSvc.GetMail()">Get Mail</button>
+<ul *ngFor="let item of GetInstaMsgs()">
+    <li>
+            {{item}}
+    </li>
+</ul>
+<hr>
+<ul *ngFor="let item of this.MessengerSvc.GetInsta()">
+    <li>
+            {{item}}
+    </li>
+</ul>

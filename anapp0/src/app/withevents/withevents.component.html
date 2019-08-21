@@ -1,0 +1,13 @@
+<br>
+<span>Username: </span><input type="text" [(ngModel)]="Username" value="" 
+placeholder="Enter Username"> 
+<!--[] ts to html-->
+<!--() html to ts -->
+<p></p>
+<span>Password: </span><input type="password" [(ngModel)]="Password" value="" 
+placeholder="Enter Password"> 
+<p></p>
+<button onclick="alert('Login in progress')" (click)="Login(Username,Password)">
+    Login</button>
+    <br>
+<h5>{{Loginstatus}}</h5>

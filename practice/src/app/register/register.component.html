@@ -1,0 +1,30 @@
+{{this.httpPrac.status}}
+<hr>
+  <div class="container">
+    <body>
+    <!--* is for structural directive-->
+     <div *ngIf="Fa==true ; else else1">
+        <h5>{{Registerstatus}}</h5>
+    <img src='../../assets/done.jpg' style="float: right;width: 100px;height: 100px;" > <br><br>   
+    </div>
+    <ng-template #else1>
+        <h5>{{Registerstatus}}</h5>
+     <img src='../../assets/fail.jpg' style="float:right;width: 100px;height: 100px;"> 
+    </ng-template>
+    <h1 title="Register">Registration</h1>
+    <form ngNativeValidate><br>
+    <span> &nbsp;Username: </span> <input type="Username" [(ngModel)]="Username" 
+    placeholder="Enter Username" name="name" required>
+    <span> &nbsp;Email: </span> <input type="text" [(ngModel)]="Email" 
+    placeholder="Enter Email" [ngStyle]="Style1" name="email" required><br>
+    <span> &nbsp;Password: </span> <input type="password" [(ngModel)]="Password" 
+    placeholder="Enter Password" name="psw" required><br>
+    <span> &nbsp;Repeat Password: </span> <input type="password" [(ngModel)]="RPassword" 
+    placeholder="Repeat Password" name="psw-repeat" required><br>
+    <h4> &nbsp;By creating an account you agree to our <a href="#">Terms & Privacy</a>.</h4>
+    <button onclick="alert('Registration in progress')" 
+    (click)="Register(Username,Email,Password,RPassword)">
+    Register</button>
+    </form></body>
+    </div>
+        
