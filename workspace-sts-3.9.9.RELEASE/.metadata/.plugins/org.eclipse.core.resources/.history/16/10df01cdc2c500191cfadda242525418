@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+<a href="InsertBooks.html"><br><br>
+<a href="ViewOneBook.html"><br><br>
+<a href="ViewAllBooks.html"><br><br>
+</form>
+</body>
+</html>

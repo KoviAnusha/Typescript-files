@@ -1,0 +1,1 @@
+<i>The result of selected operation is :${result}</i>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+<a type="submit" value="Insert Books" href="InsertBooks.html"><br><br>
+<a type="submit" value="View By ID" href="ViewOneBook.html"><br><br>
+<a type="submit" value="View All Books" href="ViewAllBooks.html"><br><br>
+</form>
+</body>
+</html>

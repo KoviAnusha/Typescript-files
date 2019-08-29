@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="HelloBean"/>
+<aop-project name="CurrencyAnnotater"/>
+<aop-project name="i18nSample"/>
+<aop-project name="NextStep"/>
+</aop-reference-model>

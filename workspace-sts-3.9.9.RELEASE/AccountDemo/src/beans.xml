@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd">
+	
+	<bean id="ca" class="com.sj.demo.CurrentAccount"></bean>
+	<bean id="sa" class="com.sj.demo.SavingsAccount"></bean>
+	<bean id="person1" class="com.sj.demo.Person">
+	<property name="id" value="1"></property>
+	<property name="name" value="abc"></property>
+	<property name="a" ref="ca"></property>
+</bean>
+
+<bean id="person2" class="com.sj.demo.Person">
+<constructor-arg value="xyz"></constructor-arg>
+<constructor-arg value="2"></constructor-arg>
+<constructor-arg ref="ca"></constructor-arg>
+</bean>
+
+<bean id="a" class="com.sj.demo.CurrentAccount"></bean>
+
+<bean id="person3" class="com.sj.demo.Person" autowire="byName" scope="prototype">
+<property name="id" value="1"></property>
+<property name="name" value="abc"></property>
+</bean>
+
+</beans>

@@ -1,0 +1,31 @@
+package com.sj.model;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sj.dao.BookDAOImplementation;
+
+
+@WebServlet("/insert")
+public class InsertServelet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public InsertServelet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		BookDAOImplementation bd=new BookDAOImplementation();
+		PrintWriter out=response.getWriter();
+		Book b = null;
+		bd.insertbook(Integer.parseInt(request.getParameter("id")), title, author, Integer.parseInt(request.getParameter("price")));
+	}
+
+}

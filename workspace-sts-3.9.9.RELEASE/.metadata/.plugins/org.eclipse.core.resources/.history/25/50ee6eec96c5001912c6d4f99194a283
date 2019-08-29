@@ -1,0 +1,15 @@
+package com.sj.dao;
+
+import java.util.ArrayList;
+
+import com.sj.model.Book;
+
+public interface BookDAO {
+
+	public ArrayList<Book> viewDetails();
+	public void insertbook(int id,String title,String author,double price);
+	public ArrayList<Book> viewDetailsbyid()
+//	public void UpdateBook();
+//	public void DeleteBook();
+	
+}

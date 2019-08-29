@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="Add" method="POST">
+<input type="text" label="Enter a number" name="num1">
+<input type="text" label="Enter a number" name="num2">
+<button onclick=Add(num1,num2)>Add</button>
+</form>
+</body>
+</html>

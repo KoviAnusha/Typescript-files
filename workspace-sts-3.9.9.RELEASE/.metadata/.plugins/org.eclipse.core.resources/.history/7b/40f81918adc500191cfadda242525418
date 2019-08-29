@@ -1,0 +1,16 @@
+package com.sj.dao;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.sj.model.Book;
+
+public interface BookDAO {
+
+	public ArrayList<Book> viewDetails();
+	public void insertbook(int id,String title,String author,double price);
+	public Book viewDetailsbyid(int id) throws SQLException;
+//	public void UpdateBook();
+//	public void DeleteBook();
+	
+}

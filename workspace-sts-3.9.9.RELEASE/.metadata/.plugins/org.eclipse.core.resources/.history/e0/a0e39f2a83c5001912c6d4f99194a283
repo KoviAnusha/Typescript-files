@@ -1,0 +1,9 @@
+package com.sj.dao;
+
+
+public interface BookDAO {
+
+	public void viewDetails();
+	public void createBook();
+	
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" action="register">
+Book ID: <input type="text" name="id" ><br><br>
+Title: <input type="text" name="title" ><br><br>
+Author: <input type="text" name="author" ><br><br>
+Price: <input type="text" name="price" ><br><br>
+<input>
+</form>
+</body>
+</html>

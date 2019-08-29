@@ -1,0 +1,105 @@
+package com.sj.dao;
+import com.sj.model.*;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+public class BookDAOImplementation implements BookDAO{
+		
+	public BookDAOImplementation()
+	{
+		System.out.println("\nDatabase connection established!!!!!!!!!");
+	}
+		public ArrayList<Book> viewDetails()
+		{
+			ArrayList<Book> a=new ArrayList<Book>();
+			DBConnector d=new DBConnector();
+			Connection c;
+			try {
+				c = d.getConnection();
+				Statement state= c.createStatement();
+				ResultSet users=state.executeQuery("select * from book");
+				System.out.println("\nThe Records are............\n");
+				while(users.next())
+				{
+					System.out.println(users.getString(1)+" "+users.getString(2)+" "+users.getString(3)+" "+users.getString(4));
+					Book b=new Book(Integer.parseInt(users.getString(1)),users.getString(2),users.getString(3),Integer.parseInt(users.getString(4)));
+					a.add(b);
+				}
+				c.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+			return a;
+		}	
+		public void insertbook(int id,String title,String author,double price)
+		{
+			DBConnector d=new DBConnector();
+			Connection c;
+			try {
+				c = d.getConnection();
+				Statement state= c.createStatement();
+				String q1="insert into book values('" +id+ "', '" + title + "', '" + author + "','"+price+"')";
+				 ResultSet rs = state.executeQuery(q1);
+					System.out.println("\nInserted Records into the table............");
+				c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		public Book viewDetailsbyid(int id)
+		{
+			DBConnector d=new DBConnector();
+			Connection c;
+			Book b=new Book();
+			try {
+				c = d.getConnection();
+				Statement state= c.createStatement();
+				String q1="select * from book where id='" +id+ "'";
+				ResultSet users=state.executeQuery(q1);
+				System.out.println("\nThe Records are............\n");
+				System.out.println(users.getString(1)+" "+users.getString(2)+" "+users.getString(3)+" "+users.getString(4));
+				Book b1=new Book(Integer.parseInt(users.getString(1)),users.getString(2),users.getString(3),Integer.parseInt(users.getString(4)));
+				return b1;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+			return b;
+		}
+//		public void DeleteBook(int id,String name,String loc)
+//		{
+//			DBConnector d=new DBConnector();
+//			Connection c;
+//			try {
+//				c = d.getConnection();
+//				Statement state= c.createStatement();
+//				String q1="insert into customer values('" +id+ "', '" + name + "', '" + loc + "')";
+//				 ResultSet rs = state.executeQuery(q1);
+//					System.out.println("\nUpdated the table............");
+//				c.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		public void UpdateBook(int id,String name,String loc)
+//		{
+//			DBConnector d=new DBConnector();
+//			Connection c;
+//			try {
+//				c = d.getConnection();
+//				Statement state= c.createStatement();
+//				String q1="insert into customer values('" +id+ "', '" + name + "', '" + loc + "')";
+//				 ResultSet rs = state.executeQuery(q1);
+//					System.out.println("\nUpdated the table............");
+//				c.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+}

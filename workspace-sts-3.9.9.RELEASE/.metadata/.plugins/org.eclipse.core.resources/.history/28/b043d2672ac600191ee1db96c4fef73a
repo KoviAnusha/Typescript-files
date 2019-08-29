@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="get" action="index.jsp">
+Enter First Number: <input type="text" value="Enter First Number"><br>
+Enter Second Number: <input type="text" value="Enter Second Number"><br>
+<input type="submit" value="Add">
+</form>
+</body>
+</html>

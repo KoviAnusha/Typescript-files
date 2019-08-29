@@ -1,0 +1,8 @@
+package com.sj.model;
+
+public class Hello {
+public void sayHello()
+{
+	System.out.println("hi");
+}
+}

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form>
+<a href="../InsertBooks.html"><button>Insert</button></a><br><br>
+<a href="../ViewAllBook.html"><button>View All Books</button></a><br><br>
+<a href="../ViewOneBook.html"><button>View One Book</button></a><br><br>
+<!-- <a href="../Update.html"><button>Update</button></a><br><br>
+<a href="../Delete.html"><button>Delete</button></a><br><br> -->
+</form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+package com.sj.dao;
+
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+public class BookDAOImplementation implements BookDAO{
+		
+	public BookDAOImplementation()
+	{
+		System.out.println("\nDatabase connection established!!!!!!!!!");
+	}
+		public void viewDetails()
+		{
+			DBConnector d=new DBConnector();
+			Connection c;
+			try {
+				c = d.getConnection();
+				Statement state= c.createStatement();
+				ResultSet users=state.executeQuery("select * from book");
+				System.out.println("\nThe Records are............\n");
+				while(users.next())
+				{
+					System.out.println(users.getString(1)+" "+users.getString(2)+" "+users.getString(3)+" "+users.getString(4));
+				}
+				c.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}	
+		}	
+		public void insertbook(int id,String title,String author,double price)
+		{
+			DBConnector d=new DBConnector();
+			Connection c;
+			try {
+				c = d.getConnection();
+				Statement state= c.createStatement();
+				String q1="insert into book values('" +id+ "', '" + title + "', '" + author + "','"+price+"')";
+				 ResultSet rs = state.executeQuery(q1);
+					System.out.println("\nInserted Records into the table............");
+				c.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+//		public void DeleteBook(int id,String name,String loc)
+//		{
+//			DBConnector d=new DBConnector();
+//			Connection c;
+//			try {
+//				c = d.getConnection();
+//				Statement state= c.createStatement();
+//				String q1="insert into customer values('" +id+ "', '" + name + "', '" + loc + "')";
+//				 ResultSet rs = state.executeQuery(q1);
+//					System.out.println("\nUpdated the table............");
+//				c.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+//		public void UpdateBook(int id,String name,String loc)
+//		{
+//			DBConnector d=new DBConnector();
+//			Connection c;
+//			try {
+//				c = d.getConnection();
+//				Statement state= c.createStatement();
+//				String q1="insert into customer values('" +id+ "', '" + name + "', '" + loc + "')";
+//				 ResultSet rs = state.executeQuery(q1);
+//					System.out.println("\nUpdated the table............");
+//				c.close();
+//			} catch (SQLException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+		public void viewDetails(PrintWriter out) {
+			// TODO Auto-generated method stub
+			
+		}
+}

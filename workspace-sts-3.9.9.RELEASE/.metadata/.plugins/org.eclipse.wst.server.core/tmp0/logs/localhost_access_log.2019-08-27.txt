@@ -1,0 +1,9 @@
+127.0.0.1 - - [27/Aug/2019:17:07:39 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:07:41 +0530] "GET /BookHomeAssignment/Index.jsp HTTP/1.1" 200 385
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:08:26 +0530] "GET /BookHomeAssignment/InsertBooks.jsp HTTP/1.1" 200 469
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:10:48 +0530] "GET /BookHomeAssignment/ViewAllBook.jsp HTTP/1.1" 200 271
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:10:49 +0530] "POST /BookHomeAssignment/servelet HTTP/1.1" 200 48
+127.0.0.1 - - [27/Aug/2019:17:20:45 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:20:46 +0530] "GET /BookHomeAssignment/Index.jsp HTTP/1.1" 200 385
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:20:47 +0530] "GET /BookHomeAssignment/InsertBooks.jsp HTTP/1.1" 200 469
+0:0:0:0:0:0:0:1 - - [27/Aug/2019:17:20:57 +0530] "GET /BookHomeAssignment/Index.jsp HTTP/1.1" 200 385

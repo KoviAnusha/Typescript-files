@@ -1,0 +1,33 @@
+package com.sj.model;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sj.dao.BookDAOImplementation;
+
+/**
+ * Servlet implementation class viewServelet
+ */
+@WebServlet("/view")
+public class viewServelet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public viewServelet() {
+        super();
+    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		BookDAOImplementation bd=new BookDAOImplementation();
+		PrintWriter out=response.getWriter();
+		out.println(bd.viewDetails().size());
+		for(int i = 0; i < bd.viewDetails().size(); i++) { 
+		    out.println(bd.viewDetails().get(i));
+		}
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.sj.dao;
+
+import java.util.Properties;
+import java.sql.Connection;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
+public class DBConnector {
+	public static DBConnector connector;
+	DBConnector() {
+		try
+		{
+			 Class.forName("org.mariadb.jdbc.Driver");
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	public static DBConnector getConnector()
+	{
+		if(connector==null)
+		{
+			connector=new DBConnector();
+		}
+		return connector;
+	}
+	public Connection getConnection() throws SQLException
+	{
+		return DriverManager.getConnection("jdbc:mariadb://localhost:3306/dbs","root" ,"root");
+	}
+}

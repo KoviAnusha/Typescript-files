@@ -1,0 +1,22 @@
+
+public class Customer {
+	int num;
+	String loc,name;
+	public Customer(int id,String name,String loc) {
+		this.num=id;
+		this.name=name;
+		this.loc=loc;
+	}
+	public String getname()
+	{
+		return this.name;
+	}
+	public String getloc()
+	{
+		return this.loc;
+	}
+	public int getid()
+	{
+		return this.num;
+	}
+}

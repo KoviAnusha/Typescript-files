@@ -1,0 +1,39 @@
+import java.util.Properties;
+import java.sql.Connection;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.SQLException;
+
+
+public class DBConnector {
+	public static DBConnector connector;
+//	String filePath = "C:\\Users\\admin\\eclipse-workspace\\Prac\\src\\config.properties";
+//	Properties prop = new Properties();
+	DBConnector() {
+		try
+		{
+//			 Class.forName(prop.getProperty("driver"));
+			 Class.forName("org.mariadb.jdbc.Driver");
+		}
+		catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	public static DBConnector getConnector()
+	{
+		if(connector==null)
+		{
+			connector=new DBConnector();
+		}
+		return connector;
+	}
+	public Connection getConnection() throws SQLException
+	{
+//		return DriverManager.getConnection(prop.getProperty("url"),prop.getProperty("name"),prop.getProperty("password"));
+		return DriverManager.getConnection("jdbc:mariadb://localhost:3306/dbs","root" ,"root");
+	}
+}

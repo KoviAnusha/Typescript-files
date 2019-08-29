@@ -1,0 +1,11 @@
+package com.sj.dao;
+
+
+public interface BookDAO {
+
+	public void viewDetails();
+	public void insertbook(int id,String title,String author,double price);
+//	public void UpdateBook();
+//	public void DeleteBook();
+	
+}

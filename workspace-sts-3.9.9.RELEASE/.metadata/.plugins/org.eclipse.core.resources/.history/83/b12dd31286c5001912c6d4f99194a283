@@ -1,0 +1,7 @@
+
+public interface CustomerDAO {
+
+	public void viewDetails();
+	public void createCust();
+	
+}

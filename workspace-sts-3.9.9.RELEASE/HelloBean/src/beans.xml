@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.3.xsd">
+	
+	<bean id="calc1" class="com.sj.model.CalcA"></bean>
+	<bean id="calc2" class="com.sj.model.CalcB"></bean>
+	<bean id="user1" class="com.sj.model.User">
+	<property name="c" ref="calc2"></property>
+
+</bean>
+	<bean id="b1" class="com.sj.model.Hello"></bean>
+</beans>
